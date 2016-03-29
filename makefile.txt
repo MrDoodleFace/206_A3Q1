@@ -1,0 +1,13 @@
+a.out : main.o syntax.o parse.o
+	gcc -o a.out main.o syntax.o parse.o
+
+main.o: main.c syntax.h
+	gcc -c main.c
+
+syntax.o: syntax.c syntax.h parse.h
+	gcc -c syntax.c
+
+parse.o: parse.c parse.h
+	gcc -c parse.c
+
+rm -f main.o syntax.o parse.o

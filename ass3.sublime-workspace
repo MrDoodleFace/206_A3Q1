@@ -1,0 +1,362 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"re",
+				"removeChar"
+			],
+			[
+				"e",
+				"expected"
+			],
+			[
+				"co",
+				"command"
+			],
+			[
+				"h",
+				"hasNextToken"
+			],
+			[
+				"token",
+				"token"
+			],
+			[
+				"ne",
+				"nextToken"
+			],
+			[
+				"isVali",
+				"isValidCommand"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "syntax_ver4.c",
+			"settings":
+			{
+				"buffer_size": 1031,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "syntax_final_ver1.c",
+			"settings":
+			{
+				"buffer_size": 4055,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main_final_ver1.c",
+			"settings":
+			{
+				"buffer_size": 349,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "parse_final_ver1.c",
+			"settings":
+			{
+				"buffer_size": 1163,
+				"line_ending": "Windows",
+				"name": "#include <stdio.h>"
+			}
+		},
+		{
+			"contents": "#include <stdio.h>;\n#include <stdbool.h>;\n#include <string.h>;\n\nchar *buffer;\nchar *temp;\n\nvoid initBuffer(char *inputLine){\n	buffer = inputLine;\n	temp = inputLine;\n}\n\nBoolean hasNextToken(){\n\n	for(i=0; i<strlen(buffer); i++){\n		if((buffer[i] != ' ' || buffer[i] != ',') && (i == strlen(buffer)-1)){\n			return 1;\n		}\n\n		if((buffer[i] == ' ' || buffer[i] == ',') && (i == strlen(buffer)-1)){\n			return 0;\n		}\n		else if(buffer[i] == ' ' || buffer[i] == ','){\n			continue;\n		}\n	}\n\n}\n\nchar removeChar(char *string, int index){\n	char removedChar = string[index];\n	for(i=index; i<strlen(string)-1; i++){\n		string[i] = string[i+1];\n		if(i == strlen(string)-2){\n			string[i] = '';\n		}\n	}\n	return removedChar;\n}\n\nvoid removeChar2(char *string, int index){\n	for(i=index; i<strlen(string)-1; i++){\n		string[i] = string[i+1];\n		if(i == strlen(string)-2){\n			string[i] = '';\n		}\n	}\n}\n\nvoid addChar(char *string, char c){\n	char *string2[strlen(string)+1];\n	string2[0] = c;\n	for(int i=0; i<strlen(string); i++){\n		string2[i+1] = string[i];\n	}\n}\n\nchar *nextToken(){\n	int i = 0;\n	char *token;\n	for(int i = 0; i < strlen(buffer); i++){}\n		if(buffer[i] != ' '){\n			int firstIndex = i;\n			while(buffer[i] != ' '){\n				addChar(token, removeChar(buffer, 0));\n				i++;\n			}\n			//for(int j = firstIndex; j<firstIndex + strlen(token); j++){\n			//	removeChar2(buffer, j);\n			//}\n			return token;\n		}\n	}\n}\n\nvoid rewind(){\n	buffer = temp;\n}",
+			"settings":
+			{
+				"buffer_size": 1412,
+				"line_ending": "Windows",
+				"name": "#include <stdio.h>;"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"sublime",
+				"Preferences: SublimeGDB Settings – User"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Milan/Documents/College/Winter 2016/Comp206/Ass3/main_ver1.c",
+		"/C/Users/Milan/Documents/College/Winter 2016/Comp206/Ass3/syntax_ver2.c",
+		"/C/Users/Milan/Documents/College/Winter 2016/Comp206/test/test.sublime-project",
+		"/C/Users/Milan/Documents/College/Winter 2016/Comp206/test/test1.c",
+		"/C/Users/Milan/AppData/Roaming/Sublime Text 2/Packages/SublimeGDB/SublimeGDB.sublime-settings",
+		"/C/Users/Milan/AppData/Roaming/Sublime Text 2/Packages/User/SublimeGDB.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"return 0",
+			"return 0;",
+			"errPlace += token;",
+			"token = nextToken();"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "syntax_ver4.c",
+					"settings":
+					{
+						"buffer_size": 1031,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "syntax_final_ver1.c",
+					"settings":
+					{
+						"buffer_size": 4055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4055,
+								4055
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2301.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "main_final_ver1.c",
+					"settings":
+					{
+						"buffer_size": 349,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37,
+								37
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "parse_final_ver1.c",
+					"settings":
+					{
+						"buffer_size": 1163,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								508,
+								508
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#include <stdio.h>",
+							"syntax": "Packages/C++/C.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"settings":
+					{
+						"buffer_size": 1412,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1412,
+								1379
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#include <stdio.h>;",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 441.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
